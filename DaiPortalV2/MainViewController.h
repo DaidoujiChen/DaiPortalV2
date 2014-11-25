@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  DaiPortalV2
 //
 //  Created by 啟倫 陳 on 2014/11/24.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "NSObject+DaiPortal.h"
 
+@interface MainViewController : UIViewController
 
 @end
-
