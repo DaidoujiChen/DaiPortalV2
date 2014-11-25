@@ -31,15 +31,17 @@
 
 @end
 
-//建立用來接收資料的部分, 收到觸發時會運行 portalAction 的內容
+//建立用來接收資料的部分, 收到觸發時會運行 portalAction 的內容, 帶上 warp 結尾的 method, block 內的 code 會以非同步方式運行
 @interface DaiPortal (Reciver)
 
 - (void)open:(void (^)())portalAction;
+- (void)open_warp:(void (^)())portalAction;
 - (void)feedback:(DaiPortalPackage *(^)())portalAction;
+- (void)feedback_warp:(DaiPortalPackage *(^)())portalAction;
 
 @end
 
-//用來傳送資料的部分, 負責觸發已建立的傳送門
+//用來傳送資料的部分, 負責觸發已建立的傳送門, 帶上 warp 結尾的 method, block 內的 code 會以非同步方式運行
 @interface DaiPortal (Sender)
 
 //send 為傳一個以上的東西過去, poke 則為純粹的觸發
@@ -48,6 +50,8 @@
 
 //帶上 result 的話可以收到回傳的訊息
 - (void)send:(DaiPortalPackage *)package result:(void (^)())result;
+- (void)send:(DaiPortalPackage *)package result_warp:(void (^)())result;
 - (void)result:(void (^)())result;
+- (void)result_warp:(void (^)())result;
 
 @end

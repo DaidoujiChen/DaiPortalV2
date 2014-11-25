@@ -55,12 +55,13 @@ enum {
     NSMethodSignature *signature = [NSMethodSignature signatureWithObjCTypes:descriptor->rest[index]];
     if (strncmp(signature.methodReturnType, "@", 1) == 0) {
         return DaiPortalBlockAnalysisReturnTypeID;
-    } else if (strncmp(signature.methodReturnType, "v", 1) == 0) {
+    }
+    else if (strncmp(signature.methodReturnType, "v", 1) == 0) {
         return DaiPortalBlockAnalysisReturnTypeVoid;
-    } else {
+    }
+    else {
         return DaiPortalBlockAnalysisReturnTypeUnknow;
     }
-    
 }
 
 @end

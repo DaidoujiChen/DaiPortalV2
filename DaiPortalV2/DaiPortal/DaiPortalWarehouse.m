@@ -37,7 +37,7 @@
 
 + (void)removeDisposable:(DaiPortal *)disposableObject {
     __weak id weakSelf = self;
-    [self portalPotecter:^{
+    [self portalPotecter: ^{
         [[weakSelf daiPortalNotificationCenter] removeObserver:disposableObject];
         [[weakSelf portals] removeObject:disposableObject];
     }];
