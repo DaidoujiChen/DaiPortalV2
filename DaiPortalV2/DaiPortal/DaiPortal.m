@@ -62,12 +62,12 @@
     return newResult;
 }
 
-+ (DaiPortalPackage *)items:(id)anItem, ...NS_REQUIRES_NIL_TERMINATION {
++ (DaiPortalPackage *)items:(id)firstItem, ...NS_REQUIRES_NIL_TERMINATION {
     NSMutableArray *objects = [NSMutableArray array];
-    if (anItem) {
+    if (firstItem) {
         va_list list;
-        id listObject = anItem;
-        va_start(list, anItem);
+        id listObject = firstItem;
+        va_start(list, firstItem);
         do {
             if (listObject) {
                 [objects addObject:listObject];
@@ -222,22 +222,22 @@
 
 @implementation DaiPortal (Reciver)
 
-- (void)open:(void (^)())portalAction {
-    [self signPortal:portalAction];
+- (void)recv:(VoidBlock)aBlock {
+    [self signPortal:aBlock];
 }
 
-- (void)open_warp:(void (^)())portalAction {
+- (void)recv_warp:(VoidBlock)aBlock {
     self.isWarp = YES;
-    [self open:portalAction];
+    [self recv:aBlock];
 }
 
-- (void)feedback:(DaiPortalPackage *(^)())portalAction {
-    [self signPortal:portalAction];
+- (void)respond:(PackageBlock)aBlock {
+    [self signPortal:aBlock];
 }
 
-- (void)feedback_warp:(DaiPortalPackage *(^)())portalAction {
+- (void)respond_warp:(PackageBlock)aBlock {
     self.isWarp = YES;
-    [self feedback:portalAction];
+    [self respond:aBlock];
 }
 
 @end
@@ -248,27 +248,27 @@
     [self broadcastObjects:package.anyObject toIdentifier:self.identifier];
 }
 
-- (void)poke {
+- (void)send {
     [self send:[DaiPortalPackage empty]];
 }
 
-- (void)send:(DaiPortalPackage *)package result:(void (^)())result {
-    [self signResultPortal:result isWarp:NO];
+- (void)send:(DaiPortalPackage *)package completion:(VoidBlock)completion {
+    [self signResultPortal:completion isWarp:NO];
     [self send:package];
 }
 
-- (void)send:(DaiPortalPackage *)package result_warp:(void (^)())result {
-    [self signResultPortal:result isWarp:YES];
+- (void)send:(DaiPortalPackage *)package completion_warp:(VoidBlock)completion {
+    [self signResultPortal:completion isWarp:YES];
     [self send:package];
 }
 
-- (void)result:(void (^)())result {
-    [self signResultPortal:result isWarp:NO];
+- (void)completion:(VoidBlock)completion {
+    [self signResultPortal:completion isWarp:NO];
     [self send:[DaiPortalPackage empty]];
 }
 
-- (void)result_warp:(void (^)())result {
-    [self signResultPortal:result isWarp:YES];
+- (void)completion_warp:(VoidBlock)completion {
+    [self signResultPortal:completion isWarp:YES];
     [self send:[DaiPortalPackage empty]];
 }
 

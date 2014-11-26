@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[self portal:@"daidouji"] feedback_warp: ^DaiPortalPackage *(NSString *text) {
+    [[self portal:@"daidouji"] respond_warp: ^DaiPortalPackage *(NSString *text) {
         NSLog(@"feedback_warp ismainthread : %d", [NSThread isMainThread]);
         NSLog(@"text : %@", text);
         return [DaiPortalPackage items:@(1), @(2), nil];
@@ -25,7 +25,7 @@
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [[MainViewController portal:@"daidouji2"] feedback: ^DaiPortalPackage *{
+        [[MainViewController portal:@"daidouji2"] respond: ^DaiPortalPackage *{
             NSLog(@"feedback ismainthread : %d", [NSThread isMainThread]);
             return [DaiPortalPackage item:@"hello"];
         }];
@@ -37,12 +37,12 @@
     
     NSLog(@"%s", __FUNCTION__);
     
-    [[self portal:@"daidouji"] send:[DaiPortalPackage item:@"hello"] result: ^(NSNumber *a, NSNumber *b) {
+    [[self portal:@"daidouji"] send:[DaiPortalPackage item:@"hello"] completion: ^(NSNumber *a, NSNumber *b) {
         NSLog(@"result ismainthread : %d", [NSThread isMainThread]);
         NSLog(@"%@, %@", a, b);
     }];
     
-    [[self portal:@"daidouji2"] result_warp: ^(NSString *text) {
+    [[self portal:@"daidouji2"] completion_warp: ^(NSString *text) {
         NSLog(@"result_warp ismainthread : %d", [NSThread isMainThread]);
         NSLog(@"back text : %@", text);
     }];
