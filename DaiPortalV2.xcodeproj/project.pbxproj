@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013336751A8AEC04007314CB /* DaiPortal+Reciver.m in Sources */ = {isa = PBXBuildFile; fileRef = 013336741A8AEC04007314CB /* DaiPortal+Reciver.m */; };
+		013336781A8AED0B007314CB /* DaiPortal+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = 013336771A8AED0B007314CB /* DaiPortal+Internal.m */; };
+		0133367B1A8AED9A007314CB /* DaiPortal+Sender.m in Sources */ = {isa = PBXBuildFile; fileRef = 0133367A1A8AED9A007314CB /* DaiPortal+Sender.m */; };
+		013336861A8B0450007314CB /* DaiPortalBlockAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 0133367F1A8B0450007314CB /* DaiPortalBlockAnalysis.m */; };
+		013336871A8B0450007314CB /* DaiPortalMessager.m in Sources */ = {isa = PBXBuildFile; fileRef = 013336811A8B0450007314CB /* DaiPortalMessager.m */; };
+		013336881A8B0450007314CB /* DaiPortalPerformHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 013336831A8B0450007314CB /* DaiPortalPerformHelper.m */; };
+		013336891A8B0450007314CB /* SFExecuteOnDeallocInternalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 013336851A8B0450007314CB /* SFExecuteOnDeallocInternalObject.m */; };
 		014966BB1A24176900C72006 /* NSObject+DaiPortal.m in Sources */ = {isa = PBXBuildFile; fileRef = 014966BA1A24176900C72006 /* NSObject+DaiPortal.m */; };
 		017556C71A2328AF00685430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556C61A2328AF00685430 /* main.m */; };
 		017556CA1A2328AF00685430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556C91A2328AF00685430 /* AppDelegate.m */; };
@@ -15,10 +22,8 @@
 		017556ED1A2328D100685430 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556EB1A2328D100685430 /* MainViewController.m */; };
 		017556EE1A2328D100685430 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017556EC1A2328D100685430 /* MainViewController.xib */; };
 		017556F01A2328DE00685430 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 017556EF1A2328DE00685430 /* Default-568h@2x.png */; };
-		017556F41A2329BA00685430 /* DaiPortal.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556F31A2329BA00685430 /* DaiPortal.m */; };
-		017556F71A2329EE00685430 /* DaiPortalWarehouse.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556F61A2329EE00685430 /* DaiPortalWarehouse.m */; };
-		017556FC1A232FC300685430 /* DaiPortalBlockAnalysis.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556F91A232FC300685430 /* DaiPortalBlockAnalysis.m */; };
-		017556FD1A232FC300685430 /* DaiPortalPerformHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556FB1A232FC300685430 /* DaiPortalPerformHelper.m */; };
+		0181DA371A8B0A760056CE18 /* DaiPortalPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181DA361A8B0A760056CE18 /* DaiPortalPackage.m */; };
+		01C0B57F1A8A04B000410034 /* DaiPortal.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C0B57E1A8A04B000410034 /* DaiPortal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		013336731A8AEC04007314CB /* DaiPortal+Reciver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DaiPortal+Reciver.h"; sourceTree = "<group>"; };
+		013336741A8AEC04007314CB /* DaiPortal+Reciver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DaiPortal+Reciver.m"; sourceTree = "<group>"; };
+		013336761A8AED0B007314CB /* DaiPortal+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DaiPortal+Internal.h"; sourceTree = "<group>"; };
+		013336771A8AED0B007314CB /* DaiPortal+Internal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DaiPortal+Internal.m"; sourceTree = "<group>"; };
+		013336791A8AED9A007314CB /* DaiPortal+Sender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DaiPortal+Sender.h"; sourceTree = "<group>"; };
+		0133367A1A8AED9A007314CB /* DaiPortal+Sender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DaiPortal+Sender.m"; sourceTree = "<group>"; };
+		0133367E1A8B0450007314CB /* DaiPortalBlockAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalBlockAnalysis.h; sourceTree = "<group>"; };
+		0133367F1A8B0450007314CB /* DaiPortalBlockAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortalBlockAnalysis.m; sourceTree = "<group>"; };
+		013336801A8B0450007314CB /* DaiPortalMessager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalMessager.h; sourceTree = "<group>"; };
+		013336811A8B0450007314CB /* DaiPortalMessager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortalMessager.m; sourceTree = "<group>"; };
+		013336821A8B0450007314CB /* DaiPortalPerformHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalPerformHelper.h; sourceTree = "<group>"; };
+		013336831A8B0450007314CB /* DaiPortalPerformHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortalPerformHelper.m; sourceTree = "<group>"; };
+		013336841A8B0450007314CB /* SFExecuteOnDeallocInternalObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFExecuteOnDeallocInternalObject.h; sourceTree = "<group>"; };
+		013336851A8B0450007314CB /* SFExecuteOnDeallocInternalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFExecuteOnDeallocInternalObject.m; sourceTree = "<group>"; };
 		014966B91A24176900C72006 /* NSObject+DaiPortal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DaiPortal.h"; sourceTree = "<group>"; };
 		014966BA1A24176900C72006 /* NSObject+DaiPortal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DaiPortal.m"; sourceTree = "<group>"; };
 		017556C11A2328AF00685430 /* DaiPortalV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaiPortalV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,14 +66,10 @@
 		017556EB1A2328D100685430 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		017556EC1A2328D100685430 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		017556EF1A2328DE00685430 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		017556F21A2329BA00685430 /* DaiPortal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortal.h; sourceTree = "<group>"; };
-		017556F31A2329BA00685430 /* DaiPortal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortal.m; sourceTree = "<group>"; };
-		017556F51A2329EE00685430 /* DaiPortalWarehouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalWarehouse.h; sourceTree = "<group>"; };
-		017556F61A2329EE00685430 /* DaiPortalWarehouse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortalWarehouse.m; sourceTree = "<group>"; };
-		017556F81A232FC300685430 /* DaiPortalBlockAnalysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalBlockAnalysis.h; sourceTree = "<group>"; };
-		017556F91A232FC300685430 /* DaiPortalBlockAnalysis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortalBlockAnalysis.m; sourceTree = "<group>"; };
-		017556FA1A232FC300685430 /* DaiPortalPerformHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalPerformHelper.h; sourceTree = "<group>"; };
-		017556FB1A232FC300685430 /* DaiPortalPerformHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortalPerformHelper.m; sourceTree = "<group>"; };
+		0181DA351A8B0A760056CE18 /* DaiPortalPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalPackage.h; sourceTree = "<group>"; };
+		0181DA361A8B0A760056CE18 /* DaiPortalPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortalPackage.m; sourceTree = "<group>"; };
+		01C0B57D1A8A04B000410034 /* DaiPortal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortal.h; sourceTree = "<group>"; };
+		01C0B57E1A8A04B000410034 /* DaiPortal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DaiPortal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +90,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0133367D1A8B0450007314CB /* PortalUtility */ = {
+			isa = PBXGroup;
+			children = (
+				0181DA351A8B0A760056CE18 /* DaiPortalPackage.h */,
+				0181DA361A8B0A760056CE18 /* DaiPortalPackage.m */,
+				0133367E1A8B0450007314CB /* DaiPortalBlockAnalysis.h */,
+				0133367F1A8B0450007314CB /* DaiPortalBlockAnalysis.m */,
+				013336801A8B0450007314CB /* DaiPortalMessager.h */,
+				013336811A8B0450007314CB /* DaiPortalMessager.m */,
+				013336821A8B0450007314CB /* DaiPortalPerformHelper.h */,
+				013336831A8B0450007314CB /* DaiPortalPerformHelper.m */,
+				013336841A8B0450007314CB /* SFExecuteOnDeallocInternalObject.h */,
+				013336851A8B0450007314CB /* SFExecuteOnDeallocInternalObject.m */,
+			);
+			path = PortalUtility;
+			sourceTree = "<group>";
+		};
 		017556B81A2328AF00685430 = {
 			isa = PBXGroup;
 			children = (
@@ -140,16 +172,25 @@
 			children = (
 				014966B91A24176900C72006 /* NSObject+DaiPortal.h */,
 				014966BA1A24176900C72006 /* NSObject+DaiPortal.m */,
-				017556F21A2329BA00685430 /* DaiPortal.h */,
-				017556F31A2329BA00685430 /* DaiPortal.m */,
-				017556F51A2329EE00685430 /* DaiPortalWarehouse.h */,
-				017556F61A2329EE00685430 /* DaiPortalWarehouse.m */,
-				017556F81A232FC300685430 /* DaiPortalBlockAnalysis.h */,
-				017556F91A232FC300685430 /* DaiPortalBlockAnalysis.m */,
-				017556FA1A232FC300685430 /* DaiPortalPerformHelper.h */,
-				017556FB1A232FC300685430 /* DaiPortalPerformHelper.m */,
+				01C0B57C1A8A046900410034 /* PortalCore */,
+				0133367D1A8B0450007314CB /* PortalUtility */,
 			);
 			path = DaiPortal;
+			sourceTree = "<group>";
+		};
+		01C0B57C1A8A046900410034 /* PortalCore */ = {
+			isa = PBXGroup;
+			children = (
+				01C0B57D1A8A04B000410034 /* DaiPortal.h */,
+				01C0B57E1A8A04B000410034 /* DaiPortal.m */,
+				013336761A8AED0B007314CB /* DaiPortal+Internal.h */,
+				013336771A8AED0B007314CB /* DaiPortal+Internal.m */,
+				013336731A8AEC04007314CB /* DaiPortal+Reciver.h */,
+				013336741A8AEC04007314CB /* DaiPortal+Reciver.m */,
+				013336791A8AED9A007314CB /* DaiPortal+Sender.h */,
+				0133367A1A8AED9A007314CB /* DaiPortal+Sender.m */,
+			);
+			path = PortalCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,14 +293,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01C0B57F1A8A04B000410034 /* DaiPortal.m in Sources */,
+				013336871A8B0450007314CB /* DaiPortalMessager.m in Sources */,
 				017556CA1A2328AF00685430 /* AppDelegate.m in Sources */,
-				017556FD1A232FC300685430 /* DaiPortalPerformHelper.m in Sources */,
+				013336861A8B0450007314CB /* DaiPortalBlockAnalysis.m in Sources */,
 				014966BB1A24176900C72006 /* NSObject+DaiPortal.m in Sources */,
+				0133367B1A8AED9A007314CB /* DaiPortal+Sender.m in Sources */,
 				017556ED1A2328D100685430 /* MainViewController.m in Sources */,
-				017556FC1A232FC300685430 /* DaiPortalBlockAnalysis.m in Sources */,
-				017556F41A2329BA00685430 /* DaiPortal.m in Sources */,
-				017556F71A2329EE00685430 /* DaiPortalWarehouse.m in Sources */,
+				013336751A8AEC04007314CB /* DaiPortal+Reciver.m in Sources */,
+				013336891A8B0450007314CB /* SFExecuteOnDeallocInternalObject.m in Sources */,
 				017556C71A2328AF00685430 /* main.m in Sources */,
+				0181DA371A8B0A760056CE18 /* DaiPortalPackage.m in Sources */,
+				013336881A8B0450007314CB /* DaiPortalPerformHelper.m in Sources */,
+				013336781A8AED0B007314CB /* DaiPortal+Internal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
