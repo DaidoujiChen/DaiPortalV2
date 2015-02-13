@@ -10,9 +10,17 @@
 
 #import <Foundation/Foundation.h>
 
+#import "DaiPortalMetaMacros.h"
+
+@interface DaiPortalPackageNil : NSObject
+
++ (DaiPortalPackageNil *)nilObject;
+
+@end
+
 @interface DaiPortalPackage : NSObject
 
-@property (nonatomic, strong) id anyObject;
+@property (nonatomic, readonly) id anyObject;
 
 //空的包包, 什麼都沒有
 + (DaiPortalPackage *)empty;
@@ -21,6 +29,18 @@
 + (DaiPortalPackage *)item:(id)anItem;
 
 //很多的物件
-+ (DaiPortalPackage *)items:(id)firstItem, ...NS_REQUIRES_NIL_TERMINATION;
++ (DaiPortalPackage *)itemsFromArray:(NSArray *)objects;
 
 @end
+
+#define DaiPortalPackageItems(...) \
+    ([DaiPortalPackage itemsFromArray:@[metamacro_foreach(checkIfNil, , __VA_ARGS__)]])
+
+#define DaiPortalPackageItem(ARG) \
+    ([DaiPortalPackage item:((ARG) ? : [DaiPortalPackageNil nilObject])])
+
+#define DaiPortalPackageEmpty \
+    ([DaiPortalPackage empty])
+
+#define checkIfNil(INDEX, ARG) \
+    (ARG) ? : [DaiPortalPackageNil nilObject],

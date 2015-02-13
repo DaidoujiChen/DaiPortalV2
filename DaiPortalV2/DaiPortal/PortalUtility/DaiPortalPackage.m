@@ -8,6 +8,25 @@
 
 #import "DaiPortalPackage.h"
 
+@implementation DaiPortalPackageNil
+
++ (DaiPortalPackageNil *)nilObject {
+    static DaiPortalPackageNil *daiPortalPackageNil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        daiPortalPackageNil = [DaiPortalPackageNil new];
+    });
+    return daiPortalPackageNil;
+}
+
+@end
+
+@interface DaiPortalPackage ()
+
+@property (nonatomic, strong) id anyObject;
+
+@end
+
 @implementation DaiPortalPackage
 
 + (DaiPortalPackage *)empty {
@@ -18,27 +37,13 @@
 
 + (DaiPortalPackage *)item:(id)anObject {
     DaiPortalPackage *newResult = [DaiPortalPackage new];
-    newResult.anyObject = @[anObject];
+    newResult.anyObject = @[anObject?:[DaiPortalPackageNil nilObject]];
     return newResult;
 }
 
-+ (DaiPortalPackage *)items:(id)firstItem, ...NS_REQUIRES_NIL_TERMINATION {
-    NSMutableArray *objects = [NSMutableArray array];
-    if (firstItem) {
-        va_list list;
-        id listObject = firstItem;
-        va_start(list, firstItem);
-        do {
-            if (listObject) {
-                [objects addObject:listObject];
-            }
-            listObject = va_arg(list, id);
-        }
-        while (listObject != nil);
-        va_end(list);
-    }
++ (DaiPortalPackage *)itemsFromArray:(NSArray *)objects {
     DaiPortalPackage *newResult = [DaiPortalPackage new];
-    newResult.anyObject = objects;
+    newResult.anyObject = [objects copy];
     return newResult;
 }
 

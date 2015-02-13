@@ -13,7 +13,6 @@
 #import "SFExecuteOnDeallocInternalObject.h"
 #import "DaiPortalMessager.h"
 #import "DaiPortalBlockAnalysis.h"
-#import "DaiPortalPerformHelper.h"
 
 @implementation DaiPortal (Internal)
 
@@ -91,27 +90,7 @@
     
     //要先看傳送過來的數量是不是跟要輸出的數量一致
     if (self.argumentsInBlock == [notification.object count]) {
-        
-        //根據 block 的類型又可以分為回傳 void 及 DaiPortalPackage 兩種
-        switch (self.returnTypeInBlock) {
-            case DaiPortalBlockAnalysisReturnTypeID:
-            {
-                [self handleReturnID:notification];
-                break;
-            }
-                
-            case DaiPortalBlockAnalysisReturnTypeVoid:
-            {
-                [self handleReturnVoid:notification];
-                break;
-            }
-                
-            case DaiPortalBlockAnalysisReturnTypeUnknow:
-            {
-                NSLog(@"應該沒有人會到這邊吧, O口O!");
-                break;
-            }
-        }
+        [self handleObjects:notification];
     }
     else {
         NSLog(@"從 %@ 傳送往 %@, 識別為 <%@> 的參數數量不匹配.", notification.userInfo[@"source"], self.dependObject, self.identifier);
@@ -129,42 +108,71 @@
 
 #pragma mark * handle portal result
 
-- (void)handleReturnID:(NSNotification *)notification {
+- (void)handleObjects:(NSNotification *)notification {
     if (self.isWarp) {
         __weak DaiPortal *weakSelf = self;
         [self warp: ^{
-            DaiPortalPackage *result = [DaiPortalPerformHelper idPerformObjects:notification.object usingBlock:weakSelf.actionBlock];
-            [weakSelf direct: ^{
-                if (result && result.anyObject) {
-                    [DaiPortalMessager broadcastToIdentifier:weakSelf.resultPortalIdentifier objects:result.anyObject fromSource:weakSelf.dependObject];
+            NSInvocation *invocation = [self invocationWithObjects:notification.object];
+            [invocation invoke];
+            
+            switch (weakSelf.returnTypeInBlock) {
+                case DaiPortalBlockAnalysisReturnTypeID:
+                {
+                    void *returnValue;
+                    [invocation getReturnValue:&returnValue];
+                    DaiPortalPackage *result = (__bridge DaiPortalPackage *)returnValue;
+                    [weakSelf direct: ^{
+                        if (result && result.anyObject) {
+                            [DaiPortalMessager broadcastToIdentifier:weakSelf.resultPortalIdentifier objects:result.anyObject fromSource:weakSelf.dependObject];
+                        }
+                        [weakSelf disposableCheck];
+                    }];
+                    break;
                 }
-                [weakSelf disposableCheck];
-            }];
+                    
+                default:
+                    [weakSelf disposableCheck];
+                    break;
+            }
         }];
     }
     else {
-        DaiPortalPackage *result = [DaiPortalPerformHelper idPerformObjects:notification.object usingBlock:self.actionBlock];
-        if (result && result.anyObject) {
-            [DaiPortalMessager broadcastToIdentifier:self.resultPortalIdentifier objects:result.anyObject fromSource:self.dependObject];
+        NSInvocation *invocation = [self invocationWithObjects:notification.object];
+        [invocation invoke];
+        
+        switch (self.returnTypeInBlock) {
+            case DaiPortalBlockAnalysisReturnTypeID:
+            {
+                void *returnValue;
+                [invocation getReturnValue:&returnValue];
+                DaiPortalPackage *result = (__bridge DaiPortalPackage *)returnValue;
+                if (result && result.anyObject) {
+                    [DaiPortalMessager broadcastToIdentifier:self.resultPortalIdentifier objects:result.anyObject fromSource:self.dependObject];
+                }
+                break;
+            }
+                
+            default:
+                break;
         }
         [self disposableCheck];
     }
 }
 
-- (void)handleReturnVoid:(NSNotification *)notification {
-    if (self.isWarp) {
-        __weak DaiPortal *weakSelf = self;
-        [self warp: ^{
-            [DaiPortalPerformHelper voidPerformObjects:notification.object usingBlock:weakSelf.actionBlock];
-            [weakSelf direct: ^{
-                [weakSelf disposableCheck];
-            }];
-        }];
+- (NSInvocation *)invocationWithObjects:(NSArray *)objects {
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[DaiPortalBlockAnalysis signature:self.actionBlock]];
+    [invocation setTarget:self.actionBlock];
+    for (int i = 0; i < [objects count]; i++) {
+        id object;
+        if ([objects[i] isKindOfClass:[DaiPortalPackageNil class]]) {
+            object = nil;
+        }
+        else {
+            object = objects[i];
+        }
+        [invocation setArgument:(&object) atIndex:i + 1];
     }
-    else {
-        [DaiPortalPerformHelper voidPerformObjects:notification.object usingBlock:self.actionBlock];
-        [self disposableCheck];
-    }
+    return invocation;
 }
 
 #pragma mark * callback

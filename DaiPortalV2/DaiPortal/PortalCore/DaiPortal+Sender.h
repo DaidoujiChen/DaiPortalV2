@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 ChilunChen. All rights reserved.
 //
 
-#import "DaiPortal.h"
-
 //用來傳送資料的部分, 負責觸發已建立的傳送門, 帶上 warp 結尾的 method, block 內的 code 會以非同步方式運行
+
+#import "DaiPortal.h"
 
 @interface DaiPortal (Sender)
 
