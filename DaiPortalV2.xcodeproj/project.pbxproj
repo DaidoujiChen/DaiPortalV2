@@ -17,23 +17,12 @@
 		017556C71A2328AF00685430 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556C61A2328AF00685430 /* main.m */; };
 		017556CA1A2328AF00685430 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556C91A2328AF00685430 /* AppDelegate.m */; };
 		017556D21A2328AF00685430 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 017556D11A2328AF00685430 /* Images.xcassets */; };
-		017556E11A2328AF00685430 /* DaiPortalV2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556E01A2328AF00685430 /* DaiPortalV2Tests.m */; };
 		017556ED1A2328D100685430 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 017556EB1A2328D100685430 /* MainViewController.m */; };
 		017556EE1A2328D100685430 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 017556EC1A2328D100685430 /* MainViewController.xib */; };
 		017556F01A2328DE00685430 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 017556EF1A2328DE00685430 /* Default-568h@2x.png */; };
 		0181DA371A8B0A760056CE18 /* DaiPortalPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181DA361A8B0A760056CE18 /* DaiPortalPackage.m */; };
 		01C0B57F1A8A04B000410034 /* DaiPortal.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C0B57E1A8A04B000410034 /* DaiPortal.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		017556DB1A2328AF00685430 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 017556B91A2328AF00685430 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 017556C01A2328AF00685430;
-			remoteInfo = DaiPortalV2;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01305F321A8DE9F400D4AA71 /* DaiPortalMetaMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaiPortalMetaMacros.h; sourceTree = "<group>"; };
@@ -57,9 +46,6 @@
 		017556C81A2328AF00685430 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		017556C91A2328AF00685430 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		017556D11A2328AF00685430 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		017556DA1A2328AF00685430 /* DaiPortalV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DaiPortalV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		017556DF1A2328AF00685430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		017556E01A2328AF00685430 /* DaiPortalV2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DaiPortalV2Tests.m; sourceTree = "<group>"; };
 		017556EA1A2328D100685430 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		017556EB1A2328D100685430 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		017556EC1A2328D100685430 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -72,13 +58,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		017556BE1A2328AF00685430 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		017556D71A2328AF00685430 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				017556C31A2328AF00685430 /* DaiPortalV2 */,
-				017556DD1A2328AF00685430 /* DaiPortalV2Tests */,
 				017556C21A2328AF00685430 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				017556C11A2328AF00685430 /* DaiPortalV2.app */,
-				017556DA1A2328AF00685430 /* DaiPortalV2Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,23 +120,6 @@
 				017556EF1A2328DE00685430 /* Default-568h@2x.png */,
 				017556C51A2328AF00685430 /* Info.plist */,
 				017556C61A2328AF00685430 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		017556DD1A2328AF00685430 /* DaiPortalV2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				017556E01A2328AF00685430 /* DaiPortalV2Tests.m */,
-				017556DE1A2328AF00685430 /* Supporting Files */,
-			);
-			path = DaiPortalV2Tests;
-			sourceTree = "<group>";
-		};
-		017556DE1A2328AF00685430 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				017556DF1A2328AF00685430 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -210,24 +170,6 @@
 			productReference = 017556C11A2328AF00685430 /* DaiPortalV2.app */;
 			productType = "com.apple.product-type.application";
 		};
-		017556D91A2328AF00685430 /* DaiPortalV2Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 017556E71A2328AF00685430 /* Build configuration list for PBXNativeTarget "DaiPortalV2Tests" */;
-			buildPhases = (
-				017556D61A2328AF00685430 /* Sources */,
-				017556D71A2328AF00685430 /* Frameworks */,
-				017556D81A2328AF00685430 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				017556DC1A2328AF00685430 /* PBXTargetDependency */,
-			);
-			name = DaiPortalV2Tests;
-			productName = DaiPortalV2Tests;
-			productReference = 017556DA1A2328AF00685430 /* DaiPortalV2Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -239,10 +181,6 @@
 				TargetAttributes = {
 					017556C01A2328AF00685430 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					017556D91A2328AF00685430 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = 017556C01A2328AF00685430;
 					};
 				};
 			};
@@ -260,7 +198,6 @@
 			projectRoot = "";
 			targets = (
 				017556C01A2328AF00685430 /* DaiPortalV2 */,
-				017556D91A2328AF00685430 /* DaiPortalV2Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,13 +210,6 @@
 				017556D21A2328AF00685430 /* Images.xcassets in Resources */,
 				017556EE1A2328D100685430 /* MainViewController.xib in Resources */,
 				017556F01A2328DE00685430 /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		017556D81A2328AF00685430 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,23 +235,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		017556D61A2328AF00685430 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				017556E11A2328AF00685430 /* DaiPortalV2Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		017556DC1A2328AF00685430 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 017556C01A2328AF00685430 /* DaiPortalV2 */;
-			targetProxy = 017556DB1A2328AF00685430 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		017556E21A2328AF00685430 /* Debug */ = {
@@ -420,40 +334,6 @@
 			};
 			name = Release;
 		};
-		017556E81A2328AF00685430 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DaiPortalV2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaiPortalV2.app/DaiPortalV2";
-			};
-			name = Debug;
-		};
-		017556E91A2328AF00685430 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = DaiPortalV2Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaiPortalV2.app/DaiPortalV2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -471,15 +351,6 @@
 			buildConfigurations = (
 				017556E51A2328AF00685430 /* Debug */,
 				017556E61A2328AF00685430 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		017556E71A2328AF00685430 /* Build configuration list for PBXNativeTarget "DaiPortalV2Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				017556E81A2328AF00685430 /* Debug */,
-				017556E91A2328AF00685430 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
