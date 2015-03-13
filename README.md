@@ -6,6 +6,10 @@ DaidoujiChen
 
 daidoujichen@gmail.com
 
+image by Peggy
+
+starsareshinee@gmail.com
+
 總覽
 ===========
 傳送門是一個突發奇想, 自己覺得有趣的概念, 目的是在 objects 之間, 互相的傳遞訊息.
